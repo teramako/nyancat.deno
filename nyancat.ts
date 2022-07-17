@@ -1,12 +1,9 @@
 
-import { readKeypress } from "https://deno.land/x/keypress@0.0.8/mod.ts";
-
 export const NyanCat = {
-    async start(fps = 0.133) {
+    start(fps = 0.133) {
         this.stopped = false;
         print(NEW_SCREEN);
         this.render(fps);
-        await this.onKeyPress();
     },
     stopped: true,
     stop() {
@@ -19,13 +16,6 @@ export const NyanCat = {
         while (true) {
             for (let i = 0; i < length; ++i) {
                 yield FRAMES[i];
-            }
-        }
-    },
-    async onKeyPress() {
-        for await (const keypress of readKeypress()) {
-            if (keypress.ctrlKey && keypress.key === 'c') {
-                this.stop();
             }
         }
     },
