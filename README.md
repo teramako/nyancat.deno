@@ -1,4 +1,4 @@
-# Nyncat on Deno
+# Nyancat on Deno
 
 ```
 deno run --unstable nyancat.demo.ts
