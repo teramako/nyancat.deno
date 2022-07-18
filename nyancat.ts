@@ -1,6 +1,6 @@
 
 export const NyanCat = {
-    start(fps = 0.133) {
+    start(fps = 6) {
         this.stopped = false;
         print(NEW_SCREEN);
         this.render(fps);
@@ -25,7 +25,7 @@ export const NyanCat = {
                 break;
             }
             print(frame);
-            await sleep(fps);
+            await sleep(1/fps);
             print(CLEAR_SCREEN);
         }
     }
