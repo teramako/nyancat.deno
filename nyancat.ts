@@ -6,10 +6,9 @@ export const NyanCat = {
         this.render(fps);
     },
     stopped: true,
-    stop() {
+    async stop() {
         this.stopped = true;
-        print(EXIT_SCREEN);
-        Deno.exit(0);
+        return await print(EXIT_SCREEN);
     },
     *[Symbol.iterator]() {
         const length = FRAMES.length;
@@ -32,7 +31,7 @@ export const NyanCat = {
 };
 
 function print(msg: Uint8Array) {
-    Deno.stdout.write(msg);
+    return Deno.stdout.write(msg);
 }
 function sleep(sec: number) {
     return new Promise(r => setTimeout(r, sec * 1000));
