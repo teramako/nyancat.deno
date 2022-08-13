@@ -55,8 +55,8 @@ const COLORS: {[c:string]: string} = {
     "*": ESC + "[48;5;8m",
     "%": ESC + "[48;5;175m"
 };
-const NEW_SCREEN = enc.encode(ESC + String.fromCharCode(0o67) + ESC + "[?47h"),
-    EXIT_SCREEN = enc.encode(ESC + "[?47l" + ESC + String.fromCharCode(0o70)),
+const NEW_SCREEN = enc.encode(ESC + "7" + ESC + "[?47h"),
+    EXIT_SCREEN = enc.encode(ESC + "[?47l" + ESC + "8"),
     CLEAR_SCREEN = enc.encode(ESC + "[H" + ESC + "[2J");
 
 const FRAMES =  [
